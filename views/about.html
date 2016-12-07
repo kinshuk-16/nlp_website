@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>NLP project 2016</title>
+  <title>NLP project 2016: Notice and Comment</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,7 +12,7 @@
 </head>
 <body>
   <nav class="light-blue darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NLP Project 2016</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NLP Project 2016: Notice and Comment</a>
       <ul class="right hide-on-med-and-down">
        <li><a href="/index">Overview</a></li>
        <li><a href="/demo">Demo</a></li>
@@ -33,13 +33,11 @@
 
       <div class="col s12 m12 l12"> 
       <h4>What is it about?</h4>
-         <p>“When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations.” - <a href="http://regulationsgov.github.io/developers/">Regulation.gov</a></p>
+         <p>“When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject and include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations.” - <a href="http://regulationsgov.github.io/developers/">Regulation.gov</a></p>
 
           <img src="/static/img/regulation_flow_2.png" width='100%'>
-      <p>Currently, all the comments are analyzed by a group of individuals. While this is sufficient when the volume of comments is low, the process fails when a particular regulation receives a large volume of comments. In our project, we aim to automate the process of summarizing and clustering comments on government regulations in order to aid policymakers in making better decisions based on the comments as well as to allow other interested parties to explore the documents and the comments being submitted.</p>
+      <p>Currently, all the comments are analyzed by government officials. While process works when the volume of comments is low, it fails when a particular regulation receives a large volume of comments. For example, the docket for the Consumer Financial Protection Bureau’s proposed rule on ‘Payday, Vehicle Title, and Certain High-Cost Installment Loans’ received 421,260 comments. Supposing an average of 1 minute is spent per comment, processing these comments would take approximately 878 8-hour work days. In this project, we aim to automatically summarize regulatory documents and cluster comments on those documents to aid policymakers in making better decisions based on the comments. We also hope this project will allow other interested parties to explore the documents and the comments being submitted.</p><br>
 
-
-      <p>To do this, we plan to first extract important key phrases from the text of the regulation and use them as categories for clustering the comments. As the categories and key phrases will vary for each regulation, we will use unsupervised methods to develop them. While the methods will be unsupervised, we will hand tag various regulations and the associated comments for model development and testing purposes. After determining the appropriate categories, we will analyse the text in each comment and match it with the category from the regulation text. Additionally, we will attempt to go a step further and also try to extract the overall sentiment from each comment. Finally, we plan to host the functionality on a web application which will allow users to access the regulations of their choosing along with the gist of all of its comments.</p>
       <h4>How does it work?</h4>
       <dl>
          <dt><b>Document keyword extraction</b></dt>
@@ -65,7 +63,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Credits</h5>
-          <p class="grey-text text-lighten-4">This website is part of final project for Applied Natural Language Processing, a course at the UC Berkeley School of Information. The website was designed using template by <a href ="http://materializecss.com/" class="white-text">Materialize</a>. <a href = "http://www.nltk.org/" class="white-text">NLTK library</a> used for NLP processing</p>
+          <p class="grey-text text-lighten-4">This website is part of final project for Applied Natural Language Processing, a course at the UC Berkeley School of Information. The website was designed using template by <a href ="http://materializecss.com/" class="white-text">Materialize</a>. <a href = "http://www.nltk.org/" class="white-text">NLTK library</a> used for NLP processing and <a href = "http://scikit-learn.org/stable/index.html" class="white-text">sci-kit learn</a> was used for clustering.</p>
 
 
         </div>
