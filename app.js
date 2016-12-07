@@ -53,13 +53,18 @@ app.get('/doc/:doc_id', function (req, res, next) {
 			break;
 		}
 	}
-	//doc_data['cluster_len']  = comment_data['central_comments'].length
-	//doc_data['top_words'] = comment_data['top_words']
-	console.log(comment_data['top_words']);
+	// var index =[];
+	// for (var i=0; i<comment_data['central_comments'].length ; i++){
+	// 	index.push({"i": i+1})
+	// }
+	doc_data['cluster_len']  = comment_data['central_comments'].length
+	doc_data['top_words'] = comment_data['top_words']
+	//doc_data['index'] = index
+	//console.log(comment_data['top_words']);
   res.render('doc.html', doc_data);
 });
 
-app.get('/index', function (req, res, next) {
+app.get('/demo', function (req, res, next) {
 	var title_obj = {"title_list":[]}
 	for(var i=0; i< obj["data"].length; i++){
 		title_obj["title_list"].push({"name": obj["data"][i]["doc_title"], "id":obj["data"][i]["doc_id"]})
@@ -67,7 +72,7 @@ app.get('/index', function (req, res, next) {
   res.render('index.html',title_obj);
 });
 
-app.get('/about', function (req, res, next) {
+app.get('/index', function (req, res, next) {
   res.render('about.html');
 });
 
