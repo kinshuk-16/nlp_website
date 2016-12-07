@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>NLP project 2016</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NLP Project 2016</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/index">Demo</a></li>
+        <li><a href="/about" >About</a></li>
+        <li><a href="/evaluate" id ="selected">Evaluation</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/index">Demo</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/evaluate">Evaluation</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <div class="container">
+    <div class="section">
+  <div class="row">
+
+      <div class="col s12 m12 l12"> 
+         
+         <form action="/evalComplete" method="POST">
+         <input name="docid" type="hidden" value="{{id}}"/>
+         <!-- text Part -->
+          <div class="row">
+            <div class="col s12 m4 l3"> 
+                <b>Keywords</b>
+                <div class="collection">
+                {{#keywords}}
+                  <div class="collection-item">{{.}}</div>
+                {{/keywords}}
+              </div>
+            </div>
+
+            <div class="col s12 m8 l9"> 
+              <h3>{{doc_title}}</h3>
+                <b>Summary</b>
+                <p>{{summary}}</p>
+                <b>Important sentences</b>
+                <div class="collection">
+                {{#sentences}}
+                  <div class="collection-item">{{.}}</div>
+                {{/sentences}}
+              </div>
+            </div>
+          </div>
+          <!-- Question for text part -->
+          <b>What did you think of the quality of key words in context of summary and the title? (rate on the scale of 1 to 5, 1 being not at all relevant to 5 being very relevant)</b><br>
+            <input name="group1" type="radio" id="sum1" class="with-gap" value="1"/>
+            <label for="sum1">1</label>
+            <input name="group1" type="radio" id="sum2" class="with-gap" value="2"/>
+            <label for="sum2">2</label>
+            <input name="group1" type="radio" id="sum3" class="with-gap" value="3"/>
+            <label for="sum3">3</label>
+            <input name="group1" type="radio" id="sum4" class="with-gap" value="4"/>
+            <label for="sum4">4</label>
+            <input name="group1" type="radio" id="sum5" class="with-gap" value="5"/>
+            <label for="sum5">5</label>
+          <br>
+          <br>
+          <b>What did you think of the quality of sentences in context of summary and the title? (rate on the scale of 1 to 5, 1 being not at all relevant to 5 being very relevant)</b><br>
+            <input name="group2" type="radio" id="sent1" class="with-gap" value="1"/>
+            <label for="sent1">1</label>
+            <input name="group2" type="radio" id="sent2" class="with-gap" value="2"/>
+            <label for="sent2">2</label>
+            <input name="group2" type="radio" id="sent3" class="with-gap" value="3"/>
+            <label for="sent3">3</label>
+            <input name="group2" type="radio" id="sent4" class="with-gap" value="4"/>
+            <label for="sent4">4</label>
+            <input name="group2" type="radio" id="sent5" class="with-gap" value="5"/>
+            <label for="sent5">5</label>
+            <br>
+            <br>
+            <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="action">Submit
+            </button>
+        </form>
+
+      </div>
+
+    </div>
+    </div>
+    </div>
+          
+
+  <footer class="page-footer light-blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Credits</h5>
+          <p class="grey-text text-lighten-4">This website is part of final project for Applied Natural Language Processing, a course at the UC Berkeley School of Information. The website was designed using template by <a href ="http://materializecss.com/" class="white-text">Materialize</a>. <a href = "http://www.nltk.org/" class="white-text">NLTK library</a> used for NLP processing</p>
+
+
+        </div>
+          <div class="col l3 s12">
+          </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Team members</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Emily Witt</a></li>
+            <li><a class="white-text" href="#!">Jason Danker</a></li>
+            <li><a class="white-text" href="#!">Kinshuk</a></li>
+            <li><a class="white-text" href="#!">Proxima DasMohapatra</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/static/js/materialize.js"></script>
+  <script src="/static/js/init.js"></script>
+
+  </body>
+</html>

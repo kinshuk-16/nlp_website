@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>NLP project 2016</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NLP Project 2016</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/index">Demo</a></li>
+        <li><a href="/about" id ="selected">About</a></li>
+        <li><a href="/evaluate">Evaluation</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="/index">Demo</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/evaluate">Evaluation</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="section">
+  <div class="row">
+
+      <div class="col s12 m12 l12"> 
+         <p>“When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations.” (src: <a href="http://regulationsgov.github.io/developers/">regulation.gov</a>) </p>
+
+          <img src="/static/img/regulation_flow.png">
+      <p>Currently, all the comments are analyzed by a group of individuals. While this is sufficient when the volume of comments is low, the process fails when a particular regulation receives a large volume of comments. In our project, we aim to automate the process of summarizing and clustering comments on government regulations in order to aid policymakers in making better decisions based on the comments as well as to allow other interested parties to explore the documents and the comments being submitted.</p>
+
+
+      <p>To do this, we plan to first extract important key phrases from the text of the regulation and use them as categories for clustering the comments. As the categories and key phrases will vary for each regulation, we will use unsupervised methods to develop them. While the methods will be unsupervised, we will hand tag various regulations and the associated comments for model development and testing purposes. After determining the appropriate categories, we will analyse the text in each comment and match it with the category from the regulation text. Additionally, we will attempt to go a step further and also try to extract the overall sentiment from each comment. Finally, we plan to host the functionality on a web application which will allow users to access the regulations of their choosing along with the gist of all of its comments.</p>
+
+         
+
+      </div>
+
+    </div>
+    </div>
+    </div>
+          
+
+  <footer class="page-footer light-blue darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Credits</h5>
+          <p class="grey-text text-lighten-4">This website is part of final project for Applied Natural Language Processing, a course at the UC Berkeley School of Information. The website was designed using template by <a href ="http://materializecss.com/" class="white-text">Materialize</a>. <a href = "http://www.nltk.org/" class="white-text">NLTK library</a> used for NLP processing</p>
+
+
+        </div>
+          <div class="col l3 s12">
+          </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Team members</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Emily Witt</a></li>
+            <li><a class="white-text" href="#!">Jason Danker</a></li>
+            <li><a class="white-text" href="#!">Kinshuk</a></li>
+            <li><a class="white-text" href="#!">Proxima DasMohapatra</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="/static/js/materialize.js"></script>
+  <script src="/static/js/init.js"></script>
+
+  </body>
+</html>
