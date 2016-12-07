@@ -29,20 +29,19 @@
   </nav>
   <div class="row">
 
-      <div class="col s12 m4 l3"> 
-          <b>Keywords</b>
-          <div class="collection">
-          {{#keywords}}
-            <div class="collection-item">{{.}}</div>
-          {{/keywords}}
-        </div>
-      </div>
 
-      <div class="col s12 m8 l9"> 
+      <div class="col s12 m12 l12"> 
         <h3>{{doc_title}}</h3>
-          <b>Summary</b>
+          <b>Regulation Summary (from Original Document)</b>
           <p>{{summary}}</p>
-          <b>Important sentences</b>
+          <b>Extracted keywords</b><br>
+          {{#keywords}}
+          <div class="chip">
+            {{.}}
+          </div>
+          {{/keywords}}
+          <br>
+          <b>Extracted summary</b>
           <div class="collection">
           {{#sentences}}
             <div class="collection-item">{{.}}</div>

@@ -6,6 +6,8 @@ var tools = require('./tools.js'); // Custom module providing additional functio
 var jsonfile = require('jsonfile')
 var file = './text_data.json'
 var obj = jsonfile.readFileSync(file)
+var file_c = './comment_data.json'
+var obj_c = jsonfile.readFileSync(file_c)
 var app = express(); // initializing applicaiton
 app.engine('html', mustacheExpress());
 app.set('view engine', 'mustache');
