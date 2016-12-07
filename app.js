@@ -46,7 +46,16 @@ app.get('/doc/:doc_id', function (req, res, next) {
 			break;
 		}
 	}
-	//console.log(doc_data);
+	var comment_data  = {}
+	for(var i=0; i< obj_c["data"].length; i++){
+		if(obj_c["data"][i]["doc_id"] == doc){
+			comment_data = obj_c["data"][i];
+			break;
+		}
+	}
+	//doc_data['cluster_len']  = comment_data['central_comments'].length
+	//doc_data['top_words'] = comment_data['top_words']
+	console.log(comment_data['top_words']);
   res.render('doc.html', doc_data);
 });
 
