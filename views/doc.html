@@ -14,15 +14,15 @@
   <nav class="light-blue darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NLP Project 2016</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/index">Demo</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="#">Evaluation</a></li>
+        <li><a href="/index">Overview</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="/evaluate">Evaluation</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="/index">Demo</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="#">Evaluation</a></li>
+        <li><a href="/index">Overview</a></li>
+        <li><a href="/demo">Demo</a></li>
+        <li><a href="/evaluate">Evaluation</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -34,14 +34,14 @@
         <h3>{{doc_title}}</h3>
           <b>Regulation Summary (from Original Document)</b>
           <p>{{summary}}</p>
-          <b>Extracted keywords</b><br>
+          <b>Extracted Keywords</b><br>
           {{#keywords}}
           <div class="chip">
             {{.}}
           </div>
           {{/keywords}}
           <br>
-          <b>Extracted summary</b>
+          <b>Extracted Key Sentences</b>
           <div class="collection">
           {{#sentences}}
             <div class="collection-item">{{.}}</div>
@@ -49,7 +49,27 @@
         </div>
       </div>
 
-    </div>
+    </div>      
+      <div class="row">
+      {{#top_words}}
+        <div class="col s12 m6 l3">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Cluster</span>
+              {{#.}}
+              <li>{{.}}</li>
+              {{/.}}
+            </div>
+            <div class="card-action">
+              <a href="#">Explore the cluster</a>
+            </div>
+          </div>
+        </div>
+        {{/top_words}}
+      </div>
+      
+            
+
           
 
   <footer class="page-footer light-blue darken-4">
