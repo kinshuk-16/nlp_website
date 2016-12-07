@@ -6,7 +6,7 @@ var tools = require('./tools.js'); // Custom module providing additional functio
 var jsonfile = require('jsonfile')
 var file = './text_data.json'
 var obj = jsonfile.readFileSync(file)
-var file_c = './comment_data.json'
+var file_c = './comment_data_update.json'
 var obj_c = jsonfile.readFileSync(file_c)
 var app = express(); // initializing applicaiton
 app.engine('html', mustacheExpress());
@@ -53,15 +53,34 @@ app.get('/doc/:doc_id', function (req, res, next) {
 			break;
 		}
 	}
-	// var index =[];
-	// for (var i=0; i<comment_data['central_comments'].length ; i++){
-	// 	index.push({"i": i+1})
-	// }
-	doc_data['cluster_len']  = comment_data['central_comments'].length
-	doc_data['top_words'] = comment_data['top_words']
+	var top_keys =[];
+	for (var i=0; i<comment_data['top_words'].length ; i++){
+		top_keys.push({"top": comment_data['top_words'][i], "index": String(i+1)})
+	}
+	//console.log(top_keys)
+	doc_data['top_words'] = top_keys
 	//doc_data['index'] = index
 	//console.log(comment_data['top_words']);
   res.render('doc.html', doc_data);
+});
+
+app.get('/comment/:doc_id/:comment_no', function (req, res, next) {
+	var doc = req.params.doc_id;
+	var c_no = req.params.comment_no;
+	index = parseInt(c_no - 1);
+	//console.log(doc +" "+c_no)
+	var comment_data  = {}
+	for(var i=0; i< obj_c["data"].length; i++){
+		if(obj_c["data"][i]["doc_id"] == doc){
+			comment_data["doc_id"] = obj_c["data"][i]["doc_id"];
+			comment_data["doc_title"] = obj_c["data"][i]["doc_title"];
+			comment_data["comment"] = obj_c["data"][i]["central_comments"][index];
+			comment_data["top_terms"] = obj_c["data"][i]["top_words"][index];
+			comment_data["cluster_no"] = c_no;
+			break;
+		}
+	}
+	res.render('comment.html',comment_data)
 });
 
 app.get('/demo', function (req, res, next) {

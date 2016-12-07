@@ -15,3 +15,15 @@
 nav ul  #selected {
      background-color: rgba(0, 0, 0, 0.1); 
 }
+
+iframe {
+    border-width: 0px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}

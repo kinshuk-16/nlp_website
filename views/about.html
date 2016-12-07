@@ -14,16 +14,16 @@
   <nav class="light-blue darken-4" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">NLP Project 2016</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/about" id ="selected">About</a></li>
-        <li><a href="/index">Demo</a></li>
-        <li><a href="/evaluate">Evaluation</a></li>
-      </ul>
+       <li><a href="/index">Overview</a></li>
+       <li><a href="/demo">Demo</a></li>
+       <li><a href="/evaluate">Evaluation</a></li>
+     </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="/about">About</a></li>
-        <li><a href="/index">Demo</a></li>
-        <li><a href="/evaluate">Evaluation</a></li>
-      </ul>
+     <ul id="nav-mobile" class="side-nav">
+       <li><a href="/index">Overview</a></li>
+       <li><a href="/demo">Demo</a></li>
+       <li><a href="/evaluate">Evaluation</a></li>
+     </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
@@ -32,6 +32,7 @@
   <div class="row">
 
       <div class="col s12 m12 l12"> 
+      <h4>What is it about?</h4>
          <p>“When Congress passes laws, federal agencies implement those laws through regulations. These regulations vary in subject, but include everything from ensuring water is safe to drink to setting health care standards. Regulations.gov is the place where users can find and comment on regulations.” - <a href="http://regulationsgov.github.io/developers/">Regulation.gov</a></p>
 
           <img src="/static/img/regulation_flow_2.png" width='100%'>
@@ -39,9 +40,19 @@
 
 
       <p>To do this, we plan to first extract important key phrases from the text of the regulation and use them as categories for clustering the comments. As the categories and key phrases will vary for each regulation, we will use unsupervised methods to develop them. While the methods will be unsupervised, we will hand tag various regulations and the associated comments for model development and testing purposes. After determining the appropriate categories, we will analyse the text in each comment and match it with the category from the regulation text. Additionally, we will attempt to go a step further and also try to extract the overall sentiment from each comment. Finally, we plan to host the functionality on a web application which will allow users to access the regulations of their choosing along with the gist of all of its comments.</p>
-
-         
-
+      <h4>How does it work?</h4>
+      <dl>
+         <dt><b>Document keyword extraction</b></dt>
+         <dd>This algorithm extracts the keywords in a document. This helps the tool in giving users a high level idea of the topics that the document is talking about, and also acts as an input to other algorithms.</dd>
+         <dt><b>Key sentences from document</b></dt>
+         <dd>These are the sentences from the document that have the highest importance score, based on three criteria: highest number of our important keywords; longest length (indicating an abundance of information included); and presence of words indicating the sentence is related to the problem the regulation is attempting to solve.</dd>
+         <dt><b>Cluster comments based on topic</b></dt>
+         <dd>This algorithm clusters the comments on a document using k-means. The number of clusters is determined by the number of common parents for the top unigrams in the main document. The output for this algorithm is a collection of comment clusters based on the topic</dd>
+         <dt><b>Pull out central comment cluster sentence</b></dt>
+         <dd>As it is hard to determine the semantic meaning behind a cluster, we identified and selected the comment closest to the k-means centroid as a representative of that cluster.</dd>
+         <dt><b>Differentiating cluster phrases</b></dt>
+         <dd>Having clustered the comments, we merged all of the comments in each cluster into one ‘mega-comment’ and then used TF-IDF across these ‘mega-comments.’ </dd>
+        </dl>
       </div>
 
     </div>

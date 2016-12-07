@@ -27,56 +27,44 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+  
   <div class="row">
 
 
       <div class="col s12 m12 l12"> 
-        <h3>{{doc_title}}</h3>
-          <b>Regulation Summary (from Original Document)</b>
-          <p>{{summary}}</p>
-          <b>Extracted Keywords</b><br>
-          {{#keywords}}
+        <h4>{{doc_title}}</h4>
+          
+        <!-- <h4>Cluster {{cluster_no}}</h4> -->
+          <b>Top terms from cluster</b><br>
+          {{#top_terms}}
           <div class="chip">
-            {{.}}
+           {{.}}
           </div>
-          {{/keywords}}
+          {{/top_terms}}
           <br>
-          <b>Extracted Key Sentences</b>
-          <div class="collection">
-          {{#sentences}}
-            <div class="collection-item">{{.}}</div>
-          {{/sentences}}
-        </div>
-        <b>Comment clusters</b>
+          <b>Most representative comment from the cluster</b>
+          <p>{{comment}}</p>
+
+          <br>
+          <br>
+          <a href="/doc/{{doc_id}}">back to document text</a>
       </div>
 
     </div>      
-      <div class="row">
-
-      {{#top_words}}
-        <div class="col s12 m6 l3">
-          <div class="card light-blue darken-4">
-          
-            <div class="card-content white-text">
-              <span class="card-title">Cluster {{index}}</span>
-              {{#top}}
-              <li>{{.}}</li>
-              {{/top}}
-            </div>
-
-            <div class="card-action">
-              <a href="/comment/{{doc_id}}/{{index}}">Explore the cluster</a>
-            </div>
-            
-          </div>
-        </div>
-        {{/top_words}}
-      </div>
+     
       
             
 
-          
-
+<!--           
+<nav class ="light-blue darken-4">
+          <div class="nav-wrapper">
+            <div class="col s12">
+              <a href="/demo" class="breadcrumb">Demo</a>
+              <a href="/doc/{{doc_id}}" class="breadcrumb">Document text</a>
+              <a href="#!" class="breadcrumb">Cluster {{cluster_no}}</a>
+            </div>
+          </div>
+    </nav> -->
   <footer class="page-footer light-blue darken-4">
     <div class="container">
       <div class="row">
